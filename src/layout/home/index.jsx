@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick';
 
@@ -25,7 +25,6 @@ const Home = () => {
 
 
   return (
-    <>
       <main className='flex flex-col overflow-hidden'>
         <div className='h-4/5 relative' id='top'>
           <Slider {...settings}  >
@@ -54,11 +53,10 @@ const Home = () => {
             <div className='bg-transparent border border-brownT w-full grid grid-cols-2 gap-32 p-32 rounded-3xl w-4/5 mt-12'>
               {Restaurantes.map((item, index) =>
                 <div key={index} className='flex justify-center items-center'>
-                  <Link to={item.maps} target='_blank'>
+                  <Link to={item.maps} target='_blank' className='w-[250px]'>
                     <img src={item.img} className='hover:scale-125 duration-500' />
                   </Link>
-
-                  <div className='flex flex-col mx-8'>
+                  <div className='flex flex-col mx-8 w-3/5'>
                     <h1 className='text-3xl'>{item.nome}</h1>
                     <div className='flex'>
                       <img src='src\assets\icons\Location.svg' className='w-7' />
@@ -72,7 +70,6 @@ const Home = () => {
 
         </div>
       </main>
-    </>
   )
 }
 

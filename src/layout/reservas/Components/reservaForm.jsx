@@ -1,0 +1,64 @@
+import React from 'react'
+import {z} from 'zod'
+import { zodResolver} from "@hookform/resolvers/zod"
+import { useForm } from 'react-hook-form'
+import { Restaurantes } from '../../../data/restaurantes'
+
+const reservaForm = () => {
+    const reservaSchema=z.object({
+        unidade:z.string().min(1,'É preciso informar a unidade para a reserva').refine(val=>val!=='...','É preciso informar a unidade para a reserva.'),
+        pessoas:z.string().min(1,'É preciso informar a quantidade de pessoas para a reserva.').refine(val=>val!=='...','É preciso informar a unidade para a reserva.'),
+        data:z.string().min(1,'É preciso informar a data desejada para a reserva.'),
+        horario:z.string().min(1,'É preciso informar o horario para reserva.').refine(val=>val!=='...','É preciso informar a unidade para a reserva.')
+      })
+      const {register,
+        handleSubmit,
+        formState:{errors}
+        }=useForm({
+        resolver:zodResolver(reservaSchema),
+        
+      })
+    
+      const pessoas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  return (
+    <form className='w-1/2 flex flex-col px-32' onSubmit={handleSubmit()}>
+            <span className='mt-10'>Unidade:</span>
+            <select className='w-max-content border border-gray-400 rounded-xl px-2' {...register('unidade')} >
+              <option disabled selected>...</option>
+              {Restaurantes.map((item, index) => (
+                <option key={index}>{item.nome}</option>
+              ))}
+            </select>
+            {errors.unidade && <span className='text-[#F00] text-[0.8em]'>{errors.unidade.message}</span>}
+            <span className='mt-10'>Quantidade de pessoas</span>
+            <select className='w-max-content border border-gray-400 rounded-xl px-2' {...register('pessoas')}>
+              <option disabled selected>...</option>
+              {pessoas.map((item, index) => (
+                <option key={index}>
+                  {item}{item === 1 ? ' pessoa' : ' pessoas'}
+                </option>
+              ))}
+            </select>
+            {errors.pessoas && <span className='text-[#F00] text-[0.8em]'>{errors.pessoas.message}</span>}
+            <span className='mt-10'>Data da reserva</span>
+            <input type='date' className='w-max-content border border-gray-400 rounded-xl px-2' {...register('data')}/>
+            {errors.data && <span className='text-[#F00] text-[0.8em]'>{errors.data.message}</span>}
+            <span className='mt-10'>Horário da reserva</span>
+            <select className='w-max-content border border-gray-400 rounded-xl px-2' {...register('horario')}>
+              <option disabled selected>...</option>
+              <option>18:00h</option>
+              <option>19:00h</option>
+              <option>20:00h</option>
+              <option>21:00h</option>
+              <option>22:00h</option>
+            </select>
+            {errors.horario && <span className='text-[#F00] text-[0.8em]'>{errors.horario.message}</span>}
+            <button type='submit'
+              className='flex items-center justify-center bg-brownT w-max-content rounded-xl text-white font-thin p-2 m-auto mt-8'>
+              Confirmar reserva
+            </button>
+          </form>
+  )
+}
+
+export default reservaForm

@@ -6,7 +6,6 @@ const Header = () => {
   const location = useLocation()
 
   return (
-    <>
       <div className='h-32 bg-brownT sticky top-0 w-full z-10 '>
         <div className='flex justify-between mx-[20%] items-center text-3xl text-white h-full p-3'>
 
@@ -39,9 +38,6 @@ const Header = () => {
           <Link to={'/reservas'} className='hover:text-slate-300 hover:underline'>Reservas</Link>
         </div>
       </div>
-
-
-    </>
   )
 }
 

@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
             <div className='flex items-center gap-2'>
               <img src='src\assets\icons\Email.svg' className='w-8'/>
-              <Link to={'/'} target='_blank'>Email</Link>
+              <Link to={'mailto:vendaspb@mangai.com.br'} target='_blank' type='email'>Email</Link>
             </div>
             <div className='flex items-center gap-2'>
               <img src='src\assets\icons\LinkedIn.svg' className='w-8'/>  
