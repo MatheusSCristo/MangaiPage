@@ -2,12 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
-
 import App from './App.jsx'
 import Home from "./layout/home/index.jsx"
 import Reservas from "./layout/reservas/reservas.jsx"
-import Historia from "./layout/historia/historia.jsx"
+import Historia from "./layout/historia/index.jsx"
 import NotFound from "./layout/notFound/notFound.jsx"
+
 
 import './index.css'
 

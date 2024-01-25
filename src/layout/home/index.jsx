@@ -1,34 +1,52 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Slider from 'react-slick';
+
 
 import { Restaurantes } from './../../data/restaurantes'
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 const Home = () => {
-  const [destaque,setDestaque]=useState(1)
 
-  const Destaques=()=>{
-    for(let i=1;i<=4;i++){
-      setTimeout(()=>setDestaque(i),4000)
-    }
-  }
-    useEffect(()=>{
-      Destaques()
-    },[destaque])
-
+  const settings = {
+    fade: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    swipeToSlide: false,
+    pauseOnHover: false,
+    adaptiveHeight: false,
+  };
 
 
 
   return (
     <>
-      <div className='flex flex-col '>
-        <img src={`src/assets/destaqueImg/${destaque}.jpg`} className='h-[100vh]' id='top' />
+      <main className='flex flex-col overflow-hidden'>
+        <div className='h-4/5 relative' id='top'>
+          <Slider {...settings}  >
+            <div>
+              <img src="src/assets/destaqueImg/1.jpg" alt="Imagem 1" className='h-[1000px] w-full' />
+            </div>
+            <div>
+              <img src="src/assets/destaqueImg/2.jpg" alt="Imagem 2" className='h-[1000px] w-full' />
+            </div>
+            <div>
+              <img src="src/assets/destaqueImg/3.jpg" alt="Imagem 3" className='h-[1000px] w-full' />
+            </div>
+          </Slider>
+        </div>
         <div className='bg-white mx-32'>
           <div className='flex flex-col my-32 items-center'>
             <h1 className='text-[6em]'>O Mangai</h1>
             <h2 className='text-[2em] w-1/2'>
               Lorem ipsum dolor sit amet. In voluptatem sint qui consequatur itaque ea nobis omnis cum dolores omnis ut dolorem harum et maiores suscipit vel voluptas dolores?
             </h2>
-            <Link to={'historia'} className='bg-brownT text-white p-4 rounded-xl w-64 text-xl text-center mt-4'>Conheça nossa história</Link>
+            <Link to={'historia'} className='bg-brownT text-white p-4 rounded-xl w-64 text-xl text-center mt-4 '>Conheça nossa história</Link>
           </div>
           <div className='my-32 flex flex-col items-center' id='restaurante'>
             <h1 className='text-[6em] '>Restaurantes</h1>
@@ -53,7 +71,7 @@ const Home = () => {
           </div>
 
         </div>
-      </div>
+      </main>
     </>
   )
 }
