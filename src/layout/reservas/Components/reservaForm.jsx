@@ -21,9 +21,9 @@ const reservaForm = () => {
     
       const pessoas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
   return (
-    <form className='w-1/2 flex flex-col px-32' onSubmit={handleSubmit()}>
+    <form className='w-1/2 flex flex-col px-1 md:px-32' onSubmit={handleSubmit()}>
             <span className='mt-10'>Unidade:</span>
-            <select className='w-max-content border border-gray-400 rounded-xl px-2' {...register('unidade')} >
+            <select className='md:w-max-content w-[80%] border border-gray-400 rounded-xl px-2' {...register('unidade')} >
               <option disabled selected>...</option>
               {Restaurantes.map((item, index) => (
                 <option key={index}>{item.nome}</option>
@@ -31,7 +31,7 @@ const reservaForm = () => {
             </select>
             {errors.unidade && <span className='text-[#F00] text-[0.8em]'>{errors.unidade.message}</span>}
             <span className='mt-10'>Quantidade de pessoas</span>
-            <select className='w-max-content border border-gray-400 rounded-xl px-2' {...register('pessoas')}>
+            <select className='md:w-max-content w-[80%] border border-gray-400 rounded-xl px-2' {...register('pessoas')}>
               <option disabled selected>...</option>
               {pessoas.map((item, index) => (
                 <option key={index}>
@@ -41,10 +41,10 @@ const reservaForm = () => {
             </select>
             {errors.pessoas && <span className='text-[#F00] text-[0.8em]'>{errors.pessoas.message}</span>}
             <span className='mt-10'>Data da reserva</span>
-            <input type='date' className='w-max-content border border-gray-400 rounded-xl px-2' {...register('data')}/>
+            <input type='date' className='md:w-max-content w-[80%]  border border-gray-400 rounded-xl px-2' {...register('data')}/>
             {errors.data && <span className='text-[#F00] text-[0.8em]'>{errors.data.message}</span>}
             <span className='mt-10'>Horário da reserva</span>
-            <select className='w-max-content border border-gray-400 rounded-xl px-2' {...register('horario')}>
+            <select className='md:w-max-content w-[80%]  border border-gray-400 rounded-xl px-2 text-xl' {...register('horario')}>
               <option disabled selected>...</option>
               <option>18:00h</option>
               <option>19:00h</option>

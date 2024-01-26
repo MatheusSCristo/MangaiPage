@@ -9,8 +9,10 @@
 
 *{
     font-family: 'Xilosa';
+
 }
 
 #root,html,body{
     height: max-content;
+    width: 100vw;
 }
