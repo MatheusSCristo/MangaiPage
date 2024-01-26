@@ -29,13 +29,13 @@ const Home = () => {
         <div className='h-4/5 relative' id='top'>
           <Slider {...settings}  >
             <div>
-              <img src="src/assets/destaqueImg/1.jpg" alt="Imagem 1" className='xl:h-[1000px] w-full' />
+              <img src="./src/assets/destaqueImg/1.jpg" alt="Imagem 1" className='xl:h-[1000px] w-full' />
             </div>
             <div>
-              <img src="src/assets/destaqueImg/2.jpg" alt="Imagem 2" className='xl:h-[1000px] w-full' />
+              <img src="./src/assets/destaqueImg/2.jpg" alt="Imagem 2" className='xl:h-[1000px] w-full' />
             </div>
             <div>
-              <img src="src/assets/destaqueImg/3.jpg" alt="Imagem 3" className='xl:h-[1000px] w-full' />
+              <img src="./src/assets/destaqueImg/3.jpg" alt="Imagem 3" className='xl:h-[1000px] w-full' />
             </div>
           </Slider>
         </div>
