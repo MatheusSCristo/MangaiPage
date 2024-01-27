@@ -2,8 +2,8 @@ import React from 'react'
 
 const historia = () => {
   return (
-    <div className='flex mx-32 flex-col items-center'>
-      <h1 className='text-[6em] text-black ' id='historiaTop'>Nossa história</h1>
+    <div className='flex mx-8 md:mx-32 flex-col items-center'>
+      <h1 className='text-[3em] md:text-[6em] text-black ' id='historiaTop'>Nossa história</h1>
       <div className='bg-transparent border border-brownT w-full mb-32 text-xl gap-32 p-8 rounded-3xl '>
         <p className='text-xl'>
           &nbsp;&nbsp;&nbsp; Lorem ipsum dolor sit amet. Quo modi error ut nihil quae ex voluptatem consequatur eum inventore quaerat non eaque iure qui fuga repudiandae At optio minus. Et minima alias aut natus veritatis et voluptates harum. Est illum aliquid ea vero reprehenderit et quia repellendus quo deleniti quis ut quibusdam libero eum eligendi totam. Non rerum vero est laboriosam nemo ab vitae magni ut internos quaerat! Et dolorem eius ea modi dolor sed quia explicabo hic molestiae eaque? Sed doloribus rerum in sint rerum non suscipit error ea magnam galisum. Non neque fugit 33 dignissimos repellendus in similique dolor ad repellendus maxime et veniam deserunt.
