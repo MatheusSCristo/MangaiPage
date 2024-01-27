@@ -29,16 +29,16 @@ const Home = () => {
         <div className='h-4/5 relative' id='top'>
           <Slider {...settings}  >
             <div>
-              <img src="./destaqueImg/1.jpg" alt="Imagem 1" className='xl:h-[1000px] w-full' />
+              <img src="./destaqueImg/1.jpg" alt="Imagem de destaque 1" className='xl:h-[1000px] w-full' />
             </div>
             <div>
-              <img src="./destaqueImg/2.jpg" alt="Imagem 2" className='xl:h-[1000px] w-full' />
+              <img src="./destaqueImg/2.jpg" alt="Imagem de destaque 2" className='xl:h-[1000px] w-full' />
             </div>
             <div>
-              <img src="./destaqueImg/3.jpg" alt="Imagem 3" className='xl:h-[1000px] w-full' />
+              <img src="./destaqueImg/3.jpg" alt="Imagem de destaque 3" className='xl:h-[1000px] w-full' />
             </div>
             <div>
-              <img src="./destaqueImg/4.jpg" alt="Imagem 3" className='xl:h-[1000px] w-full' />
+              <img src="./destaqueImg/4.jpg" alt="Imagem de destaque 4" className='xl:h-[1000px] w-full' />
             </div>
           </Slider>
         </div>
@@ -56,8 +56,8 @@ const Home = () => {
             <div className='bg-transparent border border-brownT w-full grid grid-cols-1  xl:grid-cols-2 gap-32 p-[5%] lg:p-32 rounded-3xl w-4/5 mt-12 '>
               {Restaurantes.map((item, index) =>
                 <div key={index} className='flex justify-center items-center w-full flex-col sm:flex-row'>
-                  <Link to={item.maps} target='_blank' className='w-[150px] lg:w-[250px]'>
-                    <img src={item.img} className='hover:scale-125 duration-500 h-full' />
+                  <Link to={item.maps} target='_blank' className='w-[150px] lg:w-[250px]' aria-label='Clique para ver a localização do restaurante'>
+                    <img src={item.img} className='hover:scale-125 duration-500 h-full' alt={`Imagem do ${item.nome}`} />
                   </Link>
                   <div className='flex flex-col mx-8 w-3/5 sm:text-xl text-3xl'>
                     <h1 className='sm:text-xl text-3xl'>{item.nome}</h1>

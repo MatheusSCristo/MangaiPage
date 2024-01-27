@@ -22,16 +22,16 @@ const reservaForm = () => {
       const pessoas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
   return (
     <form className='w-1/2 flex flex-col px-1 md:px-32' onSubmit={handleSubmit()}>
-            <span className='mt-10'>Unidade:</span>
-            <select className='md:w-max-content w-[80%] border border-gray-400 rounded-xl px-2' {...register('unidade')} >
+            <label htmlFor='unidade'   className='mt-10' >Unidade:</label>
+            <select className='md:w-max-content w-[80%] border border-gray-400 rounded-xl px-2' id='unidade '{...register('unidade')} >
               <option disabled selected>...</option>
               {Restaurantes.map((item, index) => (
                 <option key={index}>{item.nome}</option>
               ))}
             </select>
             {errors.unidade && <span className='text-[#F00] text-[0.8em]'>{errors.unidade.message}</span>}
-            <span className='mt-10'>Quantidade de pessoas</span>
-            <select className='md:w-max-content w-[80%] border border-gray-400 rounded-xl px-2' {...register('pessoas')}>
+            <label htmlFor='pessoas' className='mt-10'>Quantidade de pessoas</label>
+            <select className='md:w-max-content w-[80%] border border-gray-400 rounded-xl px-2' id='pessoas' {...register('pessoas')}>
               <option disabled selected>...</option>
               {pessoas.map((item, index) => (
                 <option key={index}>
@@ -40,11 +40,11 @@ const reservaForm = () => {
               ))}
             </select>
             {errors.pessoas && <span className='text-[#F00] text-[0.8em]'>{errors.pessoas.message}</span>}
-            <span className='mt-10'>Data da reserva</span>
-            <input type='date' className='md:w-max-content w-[80%]  border border-gray-400 rounded-xl px-2' {...register('data')}/>
+            <label htmlFor='data' className='mt-10'>Data da reserva</label>
+            <input type='date' className='md:w-max-content w-[80%]  border border-gray-400 rounded-xl px-2' id='data'{...register('data')}/>
             {errors.data && <span className='text-[#F00] text-[0.8em]'>{errors.data.message}</span>}
-            <span className='mt-10'>Horário da reserva</span>
-            <select className='md:w-max-content w-[80%]  border border-gray-400 rounded-xl px-2 text-xl' {...register('horario')}>
+            <label htmlFor='horario' className='mt-10'>Horário da reserva</label>
+            <select className='md:w-max-content w-[80%]  border border-gray-400 rounded-xl px-2 text-xl' id='horario' {...register('horario')}>
               <option disabled selected>...</option>
               <option>18:00h</option>
               <option>19:00h</option>

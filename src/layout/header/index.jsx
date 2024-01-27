@@ -10,7 +10,7 @@ const Header = () => {
         <div className='flex justify-between mx-5 md:mx-[20%] items-center text-md xl:text-3xl text-white h-full p-1 lg:p-3'>
 
           {location.pathname !== '/' ?
-            <Link to={'/'} className='h-[100px] w-[100px] xl:h-full'><img src='./imgs/logo.png' className='h-full' /></Link>
+            <Link to={'/'} className='h-auto w-[100px] xl:h-full'><img src='./imgs/logo.png' alt='Logo' className='h-full' /></Link>
             :
             <ScrollLink
               activeClass="active"
@@ -19,7 +19,7 @@ const Header = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className='cursor-pointer h-[100px] w-[100px] xl:h-full'><img src='./imgs/logo.png' className='h-full' /></ScrollLink>
+              className='cursor-pointer h-auto w-[100px] xl:h-full'><img src='./imgs/logo.png' alt='Logo' className='h-full' /></ScrollLink>
           }
 
           {location.pathname !== "/reservas" ?
