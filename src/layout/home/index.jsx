@@ -29,13 +29,16 @@ const Home = () => {
         <div className='h-4/5 relative' id='top'>
           <Slider {...settings}  >
             <div>
-              <img src="./src/assets/destaqueImg/1.jpg" alt="Imagem 1" className='xl:h-[1000px] w-full' />
+              <img src="./MangaiPage/destaqueImg/1.jpg" alt="Imagem 1" className='xl:h-[1000px] w-full' />
             </div>
             <div>
-              <img src="./src/assets/destaqueImg/2.jpg" alt="Imagem 2" className='xl:h-[1000px] w-full' />
+              <img src="./MangaiPage/destaqueImg/2.jpg" alt="Imagem 2" className='xl:h-[1000px] w-full' />
             </div>
             <div>
-              <img src="./src/assets/destaqueImg/3.jpg" alt="Imagem 3" className='xl:h-[1000px] w-full' />
+              <img src="./MangaiPage/destaqueImg/3.jpg" alt="Imagem 3" className='xl:h-[1000px] w-full' />
+            </div>
+            <div>
+              <img src="./MangaiPage/destaqueImg/4.jpg" alt="Imagem 3" className='xl:h-[1000px] w-full' />
             </div>
           </Slider>
         </div>
@@ -59,7 +62,7 @@ const Home = () => {
                   <div className='flex flex-col mx-8 w-3/5 sm:text-xl text-3xl'>
                     <h1 className='sm:text-xl text-3xl'>{item.nome}</h1>
                     <div className='flex'>
-                      <img src='src\assets\icons\Location.svg' className='w-7' />
+                      <img src='./MangaiPage\icons\Location.svg' className='w-7' />
                       <h2 className='sm:text-md text-2xl'>{item.local}</h2>
                     </div>
                   </div>
