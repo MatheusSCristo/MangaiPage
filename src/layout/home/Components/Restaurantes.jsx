@@ -1,8 +1,10 @@
 import React from 'react'
-import { Restaurantes } from '../../../data/restaurantes'
+import { Restaurantes as Restaurante } from '../../../data/restaurantes'
+import { Link } from 'react-router-dom'
 
 const Restaurantes = () => {
-    {Restaurantes.map((item, index) =>(
+  return (
+    Restaurante.map((item, index) =>
         <div key={index} className='flex justify-center items-center w-full flex-col sm:flex-row'>
           <Link to={item.maps} target='_blank' className='w-[150px] lg:w-[250px]' aria-label='Clique para ver a localização do restaurante'>
             <img src={item.img} className='hover:scale-125 duration-500 h-full w-auto' alt={`Imagem do ${item.nome}`} />
@@ -14,8 +16,8 @@ const Restaurantes = () => {
               <h2 className='sm:text-md text-2xl'>{item.local}</h2>
             </div>
           </div>
-        </div>)
-      )}
+        </div>
+      ))
 }
 
 export default Restaurantes
