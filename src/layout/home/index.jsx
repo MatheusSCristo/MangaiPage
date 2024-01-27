@@ -1,46 +1,16 @@
-import React from 'react'
+import React,{lazy}from 'react'
 import { Link } from 'react-router-dom'
-import Slider from 'react-slick';
 
 
-import { Restaurantes } from './../../data/restaurantes'
-
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 const Home = () => {
 
-  const settings = {
-    fade: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    swipeToSlide: false,
-    pauseOnHover: false,
-    adaptiveHeight: false,
-  };
-
-
-
+  const Destaque=lazy(()=>import('./Components/Destaque'))
+  const Restaurantes=lazy(()=>import('./Components/Restaurantes'))
   return (
       <main className='flex flex-col overflow-hidden'>
         <div className='h-4/5 relative' id='top'>
-          <Slider {...settings}  >
-            <div>
-              <img src="./destaqueImg/1.jpg" alt="Imagem de destaque 1" className='xl:h-[1000px] w-full' />
-            </div>
-            <div>
-              <img src="./destaqueImg/2.jpg" alt="Imagem de destaque 2" className='xl:h-[1000px] w-full' />
-            </div>
-            <div>
-              <img src="./destaqueImg/3.jpg" alt="Imagem de destaque 3" className='xl:h-[1000px] w-full' />
-            </div>
-            <div>
-              <img src="./destaqueImg/4.jpg" alt="Imagem de destaque 4" className='xl:h-[1000px] w-full' />
-            </div>
-          </Slider>
+          <Destaque/>
         </div>
         <div className='bg-white mx-2 xl:mx-8 sm:mx-32'>
           <div className='flex flex-col my-8 xl:my-32 items-center'>
@@ -54,20 +24,7 @@ const Home = () => {
             <h1 className='text-[3em] xl:text-[6em] '>Restaurantes</h1>
             <h2 className='text-[1.5em] xl:text-[2em] '>Um mangai sempre pertinho de você</h2>
             <div className='bg-transparent border border-brownT w-full grid grid-cols-1  xl:grid-cols-2 gap-32 p-[5%] lg:p-32 rounded-3xl w-4/5 mt-12 '>
-              {Restaurantes.map((item, index) =>
-                <div key={index} className='flex justify-center items-center w-full flex-col sm:flex-row'>
-                  <Link to={item.maps} target='_blank' className='w-[150px] lg:w-[250px]' aria-label='Clique para ver a localização do restaurante'>
-                    <img src={item.img} className='hover:scale-125 duration-500 h-full' alt={`Imagem do ${item.nome}`} />
-                  </Link>
-                  <div className='flex flex-col mx-8 w-3/5 sm:text-xl text-3xl'>
-                    <h1 className='sm:text-xl text-3xl'>{item.nome}</h1>
-                    <div className='flex'>
-                      <img src='.\icons\Location.svg' className='w-7' />
-                      <h2 className='sm:text-md text-2xl'>{item.local}</h2>
-                    </div>
-                  </div>
-                </div>
-              )}
+              <Restaurantes/>
             </div>
           </div>
 
