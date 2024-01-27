@@ -31,8 +31,11 @@ const router=createHashRouter([
       element:<Historia />,
 
   },
+  {
+    path:"*",
+    element:<NotFound />,
 
-
+},
 
 ]
 }
